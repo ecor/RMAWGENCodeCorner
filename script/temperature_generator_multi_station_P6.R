@@ -29,7 +29,7 @@ set.seed(1222)
 
 data(trentino)
 ## path where to plot the output figures
-wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/output/temperature_generator_multi_station"
+wpath <-  "/home/ecor/github/RMAWGENCodeCorner/data"
 ## ADJUST DATASET 
 
 
@@ -181,7 +181,7 @@ n_GPCA_iter <- 5
 n_GPCA_iteration_residuals <- 5
 
 p_test <- 1
-p_temp <- 5
+p_temp <- 6
 
 # Exogenous variables : Daily Precipitation (Observed and P03GPCA)  
 
@@ -239,172 +239,13 @@ Tn_gen <- list(P10GPCA=generationP10GPCA_temp$output$Tn_gen,
 
 
 
-for (it in names(days)) {
-	
-	str(it)
-	name <- it
-	season <- days[[it]]
-	pdf_Tx <- paste(wpath,"/tx_qqplot_uncoupled_",year_min,"_",year_max,"_",it,".pdf",sep="")
-	pdf_Tn <- paste(wpath,"/tn_qqplot_uncoupled_",year_min,"_",year_max,"_",it,".pdf",sep="")
-	pdf_deltaT <- paste(wpath,"/dt_qqplot_uncoupled_",year_min,"_",year_max,"_",it,".pdf",sep="")
-	pdf_Tx_anom <- paste(wpath,"/tx_anom_qqplot_uncoupled_",year_min,"_",year_max,"_",it,".pdf",sep="")
-	pdf_Tn_anom <- paste(wpath,"/tn_anom_qqplot_uncoupled_",year_min,"_",year_max,"_",it,".pdf",sep="")
-	main_tx  <- paste("Tx",names(Tx_gen),station00,it,sep=" ")
-	main_tn  <- paste("Tn",names(Tn_gen),station00,it,sep=" ")
-	main_deltat  <- paste("dT",names(Tx_gen),station00,it,sep=" ")
-	main_tx_anom  <- paste("Tx_anom",names(Tx_gen),station00,it,sep=" ")
-	main_tn_anom  <- paste("Tn_anom",names(Tn_gen),station00,it,sep=" ")
-	
-	qqplot_RMAWGEN_Tx(Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tx_gen=Tx_gen,Tn_gen=Tn_gen,main=main_tx,station=station00,when=season,pdf=pdf_Tx,cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-	qqplot_RMAWGEN_Tn(Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tx_gen=Tx_gen,Tn_gen=Tn_gen,main=main_tn,station=station00,when=season,pdf=pdf_Tn,cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-	qqplot_RMAWGEN_deltaT(Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tx_gen=Tx_gen,Tn_gen=Tn_gen,main=main_deltat,station=station00,when=season,pdf=pdf_deltaT,cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-	qqplot_RMAWGEN_Tx(Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tx_gen=Tx_gen,Tn_gen=Tn_gen,Tx_spline=Tx_spline,Tn_spline=Tn_spline,main=main_tx_anom,station=station00,when=season,pdf=pdf_Tx_anom,cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-	qqplot_RMAWGEN_Tn(Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tx_gen=Tx_gen,Tn_gen=Tn_gen,Tx_spline=Tx_spline,Tn_spline=Tn_spline,main=main_tn_anom,station=station00,when=season,pdf=pdf_Tn_anom,cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-	
-}
-
-# ACF Function 
-pdf(paste(wpath,"acf_uncoupled_tx_anom_P10GPCA.pdf",sep="/"))
-
-plot(acf(Tx_gen$P10GPCA-Tx_spline,lag=50),xlab="lag [day]",cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-dev.off()
-pdf(paste(wpath,"acf_uncoupled_tx_anom_mes.pdf",sep="/"))
-plot(acf(Tx_mes-Tx_spline,lag=50))
-dev.off()
-
-pdf(paste(wpath,"acf_uncoupled_tn_anom_P10GPCA.pdf",sep="/"))
-plot(acf(Tn_gen$P10GPCA-Tn_spline,lag=50),xlab="lag [day]")
-dev.off()
-pdf(paste(wpath,"acf_uncoupled_tn_anom_mes.pdf",sep="/"))
-plot(acf(Tn_mes-Tn_spline,lag=50),cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-dev.off()
-
-pdf(paste(wpath,"acf_uncoupled_deltat_P10GPCA.pdf",sep="/"))
-plot(acf(Tx_gen$P10GPCA-Tn_gen$P10GPCA,lag=50),xlab="lag [day]")
-dev.off()
-pdf(paste(wpath,"acf_uncoupled_deltat_mes.pdf",sep="/"))
-plot(acf(Tx_mes-Tn_mes,lag=50),cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-dev.off()
-
-print("acf PUT PRECIPITAION!!!!")
-dT_mes <- Tx_mes - Tn_mes 
-dT_gen <- Tx_gen$P10GPCA-Tn_gen$P10GPCA
-
-
-
-names(Tx_gen$P10GPCA) <- paste("Tx",names(Tx_gen$P10GPCA),sep="_")
-names(Tx_spline)      <- paste("Tx",names(Tx_spline),sep="_")
-names(Tx_mes)         <- paste("Tx",names(Tx_mes),sep="_")
-
-
-names(Tn_gen$P10GPCA) <- paste("Tn",names(Tn_gen$P10GPCA),sep="_")
-names(Tn_spline)      <- paste("Tn",names(Tn_spline),sep="_")
-names(Tn_mes)         <- paste("Tn",names(Tn_mes),sep="_")
-
-# plottare auto-covarianze !!!! (VEDI SOPRA) ACF Function 
-names(prec_mes)         <- paste("prec",names(prec_mes),sep="_")
-names(prec_gen$P03GPCA) <- paste("prec",names(prec_gen$P03GPCA),sep="_")
-
-
-names(dT_mes)         <- paste("dT",names(dT_mes),sep="_")
-names(dT_gen)         <- paste("dT",names(dT_gen),sep="_")
-
-# Auto-Covariance daily thermal range/precipitation 
-
-
-dT_station <- "dT_T0090"
-prec_station <- "prec_T0090"
-val_gen <- as.data.frame(cbind(prec_gen$P03GPCA[,prec_station],dT_gen[,dT_station]))		
-val_mes <- as.data.frame(cbind(prec_mes[,prec_station],dT_mes[,dT_station]))
-
-names(val_mes) <- c(prec_station,dT_station)
-names(val_gen) <- c(prec_station,dT_station)
-pdf(paste(wpath,"acf_uncoupled_prec_dt_anom_P10GPCA.pdf",sep="/"))
-plot(acf(val_gen,lag=50),xlab="lag [day]",cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-dev.off()
-
-pdf(paste(wpath,"acf_uncoupled_prec_dt_anom_mes.pdf",sep="/"))
-plot(acf(val_mes,lag=50),xlab="lag [day]",cex.main=CEX,cex.lab=CEX,cex.axis=CEX)
-dev.off()
-
-#> str(generationP10GPCA_temp$var@GPCA_data$final_results)
-#'data.frame':	10957 obs. of  18 variables:
-#		$ V1 : num  -0.469 -0.943 -1.409 -1.63 1.321 ...
-#$ V2 : num  1.073 -1.726 0.758 -2.836 -0.445 ...
-#$ V3 : num  0.294 -1.002 -0.261 -2.123 -0.383 ...
-#$ V4 : num  0.318 -0.672 -0.419 0.718 0.975 ...
-#$ V5 : num  1.728 -0.143 0.991 1.454 0.219 ...
-#$ V6 : num  0.287 0.175 0.796 -1.154 -1.047 ...
-#$ V7 : num  -0.9675 -2.0541 -0.0391 -1.4197 0.4037 ...
-#$ V8 : num  -0.78 -1.073 -1.554 0.397 -0.356 ...
-#$ V9 : num  2.49 0.986 -0.824 1.796 0.329 ...
-#$ V10: num  -1.136 0.806 -0.508 1.126 -0.148 ...
-#$ V11: num  -0.335 0.433 1.642 -0.169 -1.725 ...
-#$ V12: num  -0.381 -2.032 0.121 -2.485 -1.563 ...
-#$ V13: num  0.3504 0.0774 -0.099 -0.4151 -0.057 ...
-#$ V14: num  -2.433 -0.627 -0.216 -0.28 -1.55 ...
-#$ V15: num  -0.545 0.401 -0.686 0.31 0.962 ...
-#$ V16: num  2.145 -0.792 1.241 -0.112 1.101 ...
-#$ V17: num  0.44 -0.334 1.697 -1.09 -1.114 ...
-#$ V18: num  -0.582 -1.414 -1.513 -1.194 -0.604 ...
-#> VARselect(generationP10GPCA_temp$var@GPCA_data$final_results)
-#$selection
-#AIC(n)  HQ(n)  SC(n) FPE(n) 
-#9      4      2      9 
-#
-#$criteria
-#1            2             3             4             5             6             7             8             9            10
-#AIC(n) -6.344669707 -6.904821420 -7.1151460468 -7.2244749331 -7.2877819519 -7.3297752668 -7.3523440603 -7.3667617586 -7.3786893263 -7.3698300709
-#HQ(n)  -6.267809360 -6.755146009 -6.8926555709 -6.9291693924 -6.9196613463 -6.8888395964 -6.8385933250 -6.7801959585 -6.7193084614 -6.6376341411
-#SC(n)  -6.116581583 -6.460649811 -6.4548909524 -6.3481363533 -6.1953598867 -6.0212697162 -5.8277550242 -5.6260892371 -5.4219333194 -5.1969905786
-#FPE(n)  0.001756083  0.001002939  0.0008127032  0.0007285376  0.0006838479  0.0006557287  0.0006410999  0.0006319288  0.0006244435  0.0006300094
-#
-# 
-#> str(generationP01_temp$input$data_for_var)
-#'data.frame':	10957 obs. of  18 variables:
-#		$ T0001: num  -0.7643 -0.0148 -0.9468 1.5626 0.0202 ...
-#$ T0014: num  -0.786 -0.732 -0.914 -0.51 -0.66 ...
-#$ T0064: num  -0.846 -1.058 -0.455 -0.294 -0.274 ...
-#$ T0083: num  -0.691 -0.376 -0.926 -0.359 -0.213 ...
-#$ T0090: num  -0.311 0.246 -0.117 0.282 -0.461 ...
-#$ T0129: num  -0.232 -0.134 -0.708 0.039 0.031 ...
-#$ T0139: num  -1.008 -1.003 -1.19 -0.654 -0.246 ...
-#$ T0211: num  -0.644 0.066 -0.353 0.66 -0.147 ...
-#$ T0367: num  -0.7182 -0.5008 -0.8083 -0.0795 -1.0166 ...
-#$ T0001: num  -0.6502 -1.1471 0.0606 -0.6502 -0.1147 ...
-#$ T0014: num  -0.513 -0.746 -0.764 -0.271 0.221 ...
-#$ T0064: num  -1.61 -1.61 -0.611 -1.373 1.082 ...
-#$ T0083: num  -0.808 -1.581 -1.116 -1.116 0.951 ...
-#$ T0090: num  -0.739 -2.024 -0.972 -2.024 0.161 ...
-#$ T0129: num  -3.069 -1.132 -1.132 -1.591 -0.382 ...
-#$ T0139: num  -0.595 -1.258 -2.198 -0.889 1.121 ...
-#$ T0211: num  -0.458 0.232 0.232 -0.746 0.66 ...
-#$ T0367: num  -1.16 0.91 -1.85 2.2 1.3 ...
-#> VARselect(generationP01_temp$input$data_for_var)
-#$selection
-#AIC(n)  HQ(n)  SC(n) FPE(n) 
-#9      4      2      9 
-#
-#$criteria
-#1             2             3             4             5             6             7             8             9
-#AIC(n) -2.137185e+01 -2.192806e+01 -2.213576e+01 -2.224250e+01 -2.230644e+01 -2.234717e+01 -2.237013e+01 -2.238477e+01 -2.239684e+01
-#HQ(n)  -2.129499e+01 -2.177838e+01 -2.191327e+01 -2.194719e+01 -2.193832e+01 -2.190624e+01 -2.185638e+01 -2.179820e+01 -2.173746e+01
-#SC(n)  -2.114376e+01 -2.148389e+01 -2.147551e+01 -2.136616e+01 -2.121402e+01 -2.103867e+01 -2.084554e+01 -2.064409e+01 -2.044008e+01
-#FPE(n)  5.227847e-10  2.997545e-10  2.435347e-10  2.188803e-10  2.053243e-10  1.971294e-10  1.926563e-10  1.898592e-10  1.875836e-10
-#10
-#AIC(n) -2.238755e+01
-#HQ(n)  -2.165536e+01
-#SC(n)  -2.021471e+01
-#FPE(n)  1.893358e-10
-#
-#
 
 
 ## save inpts 
 results <- list(Tx_gen=Tx_gen,Tn_gen=Tn_gen,Tx_mes=Tx_mes,Tn_mes=Tn_mes,Tn_spline=Tn_spline,Tx_spline=Tx_spline,prec_mes=prec_mes,prec_gen=prec_gen,year_min=year_min,year_max=year_max,
 				data_tempGPCA=generationP10GPCA_temp$var@GPCA_data$final_results,
 				data_temp=generationP01_temp$input$data_for_var)
-filename <- paste(wpath,"results_uncoupled_temperature_generator_plural_station.rda",sep="/")
+filename <- paste(wpath,"results_uncoupled_temperature_generator_P10.rda",sep="/")
 save(results,file=filename)
 
 
