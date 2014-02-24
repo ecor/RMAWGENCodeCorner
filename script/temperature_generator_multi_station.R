@@ -29,7 +29,9 @@ set.seed(1222)
 
 data(trentino)
 ## path where to plot the output figures
-wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/output/temperature_generator_multi_station"
+wpath <- "/Users/ecor/dev/github/RMAWGENCodeCorner/output/temperature_generator_multi_station"
+		
+### trash		"/Users/ecor/R-packages/RMAWGENCodeCorner/output/temperature_generator_multi_station"
 ## ADJUST DATASET 
 
 
