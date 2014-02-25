@@ -183,7 +183,7 @@ n_GPCA_iter <- 5
 n_GPCA_iteration_residuals <- 5
 
 p_test <- 1
-p_temp <- 10
+p_temp <- 5
 
 # Exogenous variables : Daily Precipitation (Observed and P03GPCA)  
 

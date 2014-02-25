@@ -1,0 +1,1103 @@
+oo <- installed.packages()
+save(oo,file="oo.rda")
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(chron)
+help(date.mdy)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+ata(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+rm(list=ls())
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+warnings()
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+help(ComprehensivePrecipitationGenerator)
+data(trentino)#
+set.seed(1222) # set the seed for random generations!#
+year_max <- 1990#
+year_min <- 1961#
+year_max_sim <- 1982#
+year_min_sim <- 1981#
+#
+n_GPCA_iter <- 2#
+p <- 1#
+nscenario=1#
+station <- c("T0090","T0083")#
+## Not Run: the call to ComprehensivePrecipitationGenerator may elapse too#
+## long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <- ComprehensivePrecipitationGenerator(station=station,#
+ prec_all=PRECIPITATION,year_min=year_min,year_max=year_max,#
+ year_min_sim=year_min_sim,year_max_sim=year_max_sim,p=p,#
+ n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=0,#
+ sample="monthly",nscenario=nscenario,no_spline=TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+length(vstation)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[15],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+vstation[15]
+vstation[16]
+vstation[15]
+TEMPERATRE_MIN[,vstation[15]]
+TEMPERATURE_MIN[,vstation[15]]
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+warnings()
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+warnings()
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(date)
+help(date.mdy)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16:17],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data.frame(x=rnorm(10))
+df <- data.frame(x=rnorm(10))
+str(df)
+mean(df)
+df <- data.frame(x=rnorm(10),y=4)
+str(df)
+mean(df)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16:18],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+12*30
+12*32
+12*34
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/splineInterpolateMonthlytoDaily.R', chdir = TRUE)
+generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
++  Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
++  p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
++  sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+library(RMAWGEN)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16:17],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16:17],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/splineInterpolateMonthlytoDaily.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/splineInterpolateMonthlytoDaily.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+traceback()
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/splineInterpolateMonthlytoDailyforSeveralYears.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/splineInterpolateMonthlytoDailyforSeveralYears.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/setWholeTemperatureGeneratorParameters.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/RMAWGEN/R/ComprehensiveTemperatureGenerator.R', chdir = TRUE)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+library(RMAWGEN)
+help(ComprehensiveTemperatureGenerator)
+data(trentino)#
+#
+set.seed(1222) # set the seed for random generations!#
+year_min <- 1961#
+year_max <- 1990#
+#
+year_min_sim <- 1982#
+year_max_sim <- 1983#
+#
+n_GPCA_iter <- 5#
+n_GPCA_iteration_residuals <- 5#
+p <- 1#
+vstation <- c("B2440","B6130","B8570","B9100","LAVIO","POLSA","SMICH","T0001",#
+ "T0010","T0014","T0018","T0032","T0064","T0083","T0090","T0092",#
+"T0094","T0099","T0102","T0110","T0129","T0139","T0147","T0149",#
+"T0152","T0157","T0168","T0179","T0189","T0193","T0204","T0210",#
+"T0211","T0327","T0367","T0373")#
+## Not Run: the call to ComprehensiveTemperatureGenerator may elapse#
+## too long time (more than 5 eseconds) and is not executed  by CRAN check.#
+## Please uncomment the following line to run the example on your own PC.#
+ generation00 <-ComprehensiveTemperatureGenerator(station=vstation[16],#
+ Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,#
+ p=p,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,#
+ sample="monthly",year_min_sim=year_min_sim,year_max_sim=year_max_sim)
+help(chron)
+library(methods)
+help(methods)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+library(blockmatrix)
+help(blockmatrix)
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB
+BB^2
+BB+4
+as.matrix(BB)
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+R
+R+8
+BB
+BB[1,2]
+BB[1,1:2]
+BB[1,1:2]+4
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+as.bolckmatrix(BB)
+as.blockmatrix(BB)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+library(blockmatrix)
+help(blockmatrix)
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+tracaback()
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+traceback()
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/blockmatrix.R', chdir = TRUE)
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB <- blockmatrix(value=mv,list=l)
+as.blockmatrix(BB)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/blockmatrix.R', chdir = TRUE)
+BB <- blockmatrix(value=mv,list=l)
+as.blockmatrix(BB)
+traceback()
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/blockmatrix.R', chdir = TRUE)
+BB <- blockmatrix(value=mv,list=l)
+as.blockmatrix(BB)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+library(blockmatrix)
+help(blockmatrix)
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB
+BB+6
+as.blockmatrix(BB)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+ibrary(blockmatrix)
+library(blockmatrix)
+help(blockmatrix)
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB
+BB+8
+BB*8
+diag(BB)
+diag(as.matrix(BB))
+BB
+BB+7
+BB*7
+names(XX)
+names(BB)
+as.blockmatrix(BB)
+names(BB)
+names(as.list(BB))
+BB
+BB+7
+BB*9
+names(BB*9)
+names(as.list(BB*9))
+names(list(BB*9))
+BL <- BB
+class(BB) <- "list"
+names(BB)
+BB
+BB+7
+BB+6
+BB6
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB+4
+BB*9
+BB*9*10
+BB+10
+BB+10-10
+AA <- BB+10-10
+class(AA) <- "list"
+AA
+names(AA)
+AA[!is.ma(names(AA))]
+AA[!is.na(names(AA))]
+AA
+BB
+BB*7
+CC <- BB*7
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+traceback()
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+traceback()
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+source('~/Dropbox/iasma/RMAWGENdev/blockmatrix/R/as.blockmatrix.matrix.R', chdir = TRUE)
+as.blockmatrix(CC*7)
+as.blockmatrix(CC^0)
+as.blockmatrix(CC^5)
+as.blockmatrix(CC^0.455)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+library(blockmatrix)
+help(blockmatrix)
+rm(list=ls())#
+library(blockmatrix)#
+#
+A <- array(rnorm(9,mean=1),c(3,3))#
+B <- 0 #array(rnorm(9,mean=2),c(3,3))#
+C <- 0#
+D <- array(rnorm(9,mean=4),c(3,3))#
+F <- array(rnorm(9,mean=10),c(3,3))#
+#
+M <- blockmatrix(names=c("A","0","D","0"),A=A,D=D,dim=c(2,2))#
+E <- blockmatrix(names=c("0","F","D","0"),F=F,D=D,dim=c(2,2))#
+#
+R <- M+E#
+S <- solve(R)#
+P <- blockmatmult(R,E)#
+#
+l <- list(A=A,B=B,C=C,D=D,F=F)#
+mv <- array(c("A","B","C","D","F","F"),c(3,2))#
+BB <- blockmatrix(value=mv,list=l)
+BB
+BB+7-7
+1536/2048
+70/100
+150*0.7
+130*0.7
+mdat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3, byrow = TRUE,#
+               dimnames = list(c("row1", "row2"),#
+                               c("C.1", "C.2", "C.3")))
+mdat
+class(mdat)
+source('~/Dropbox/iasma/RMAWGENdev/main0_blockmatrix_mac.R', chdir = TRUE)
+source('~/Dropbox/iasma/RMAWGENdev/main0_mac.R', chdir = TRUE)
+install.packages("RMAWGEN")
+source('~/dev/github/RMAWGENCodeCorner/script/temperature_generator_multi_station.R', chdir = TRUE)
