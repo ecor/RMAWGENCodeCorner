@@ -252,7 +252,7 @@ save(results,file=filename)
 
 
 #
-#
+#s
 #
 #$selection
 #AIC(n)  HQ(n)  SC(n) FPE(n) 
