@@ -32,6 +32,7 @@ data(trentino)
 ## path where to plot the output figures
 ##wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
 wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/data"
+wpath <-  "/home/ecor/github/RMAWGENCodeCorner/data"
 ## ADJUST DATASET 
 
 
@@ -201,7 +202,7 @@ exogen_sim_RMRAINGEN <- normalizeGaussian_severalstations(x=prec_gen$RMRAINGEN,d
 
 
 seed <- 1224
-stop()
+
 
 set.seed(seed)
 generationP06GPCA_temp <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_temp,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,exogen=exogen,exogen_sim=exogen_sim,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE,seed=seed)
