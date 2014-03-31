@@ -30,9 +30,9 @@ set.seed(1222)
 
 data(trentino)
 ## path where to plot the output figures
-##wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
-wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/data"
-wpath <-  "/home/ecor/github/RMAWGENCodeCorner/data"
+wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
+##wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/data"
+##wpath <-  "/home/ecor/github/RMAWGENCodeCorner/data"
 ## ADJUST DATASET 
 
 
