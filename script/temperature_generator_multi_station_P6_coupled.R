@@ -25,7 +25,7 @@
 
 rm(list=ls())
 library(RMAWGEN)
-library(RMRAINGEN)
+#library(RMRAINGEN)
 set.seed(1222)
 
 data(trentino)
