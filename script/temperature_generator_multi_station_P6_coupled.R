@@ -30,7 +30,8 @@ set.seed(1222)
 
 data(trentino)
 ## path where to plot the output figures
-wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
+wpath <- paste(getwd(),"data",sep="/")
+##wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
 ##wpath <-  "/Users/ecor/R-packages/RMAWGENCodeCorner/data"
 ##wpath <-  "/home/ecor/github/RMAWGENCodeCorner/data"
 ## ADJUST DATASET 
@@ -203,32 +204,33 @@ exogen_sim_RMRAINGEN <- normalizeGaussian_severalstations(x=prec_gen$RMRAINGEN,d
 
 seed <- 1224
 
-
+print("start P06GPCA")
 set.seed(seed)
 generationP06GPCA_temp <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_temp,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,exogen=exogen,exogen_sim=exogen_sim,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE,seed=seed)
+print("end P06GPCA")
 
-
-
+print("start P01GPCA")
 set.seed(seed)
 generationP01GPCA_temp <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_test,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,exogen=exogen,exogen_sim=exogen_sim,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE,seed=seed)
+print("start P01GPCA")
 
-
-
+print("start P01GPCA_RMRAINGEN")
 set.seed(seed)
 generationP06GPCA_temp_RMRAINGEN <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_temp,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,exogen=exogen,exogen_sim=exogen_sim_RMRAINGEN,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE,seed=seed)
+print("end P01GPCA_RMRAINGEN")
 
-
+print("start P06GPCA_RMRAINGEN")
 set.seed(seed)
 generationP01GPCA_temp_RMRAINGEN <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_test,n_GPCA_iteration=n_GPCA_iter,n_GPCA_iteration_residuals=n_GPCA_iteration_residuals,exogen=exogen,exogen_sim=exogen_sim_RMRAINGEN,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE,seed=seed)
-
+print("end P06GPCA_RMRAINGEN")
 
 #generationP06_temp <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_temp,n_GPCA_iteration=0,n_GPCA_iteration_residuals=0,exogen=exogen,exogen_sim=exogen_sim,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE)
 #generationP01_temp <- ComprehensiveTemperatureGenerator(station=station,Tx_all=TEMPERATURE_MAX,Tn_all=TEMPERATURE_MIN,year_min=year_min,year_max=year_max,p=p_test,n_GPCA_iteration=0,n_GPCA_iteration_residuals=0,exogen=exogen,exogen_sim=exogen_sim,sample="monthly",mean_climate_Tn=TN_CLIMATE,mean_climate_Tx=TX_CLIMATE)
 
 # VAR select 
-
-VARselect(generationP06GPCA_temp$var@GPCA_data$final_results,lag.max=20)
-VARselect(generationP06GPCA_temp_RMRAINGEN$var@GPCA_data$final_results,lag.max=20)
+print("VAR selection")
+print(VARselect(generationP06GPCA_temp$var@GPCA_data$final_results,lag.max=6))
+print(VARselect(generationP06GPCA_temp_RMRAINGEN$var@GPCA_data$final_results,lag.max=6))
 
 
 
