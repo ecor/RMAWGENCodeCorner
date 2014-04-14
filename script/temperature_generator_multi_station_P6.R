@@ -29,7 +29,9 @@ set.seed(1222)
 
 data(trentino)
 ## path where to plot the output figures
-wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
+
+## wpath <-  "/Users/ecor/dev/github/RMAWGENCodeCorner/data"
+wpath <- paste(getwd(),"data",sep="/") ##  set setwd() function to RMAWGENCodeCorner directory
 ## ADJUST DATASET 
 
 

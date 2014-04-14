@@ -1,6 +1,6 @@
 # file precipitation-generator.R
 # 
-# This file contains a script example with daily temperature  stochastic generations 
+# This file contains a script example with daily precipitation  stochastic generations 
 #
 #
 # author: Emanuele Cordano on 12-01-2012
@@ -32,8 +32,8 @@ set.seed(1222)
 data(trentino)
 ## path where to plot the output figures
 
-wpath <-  "/Users/ecor/Dropbox/iasma/RMAWGENdev/RMAWGEN_article/RMAWGEN_simulations/data" ## wpath <-  "/home/idroclima/github/RMAWGENCodeCorner/output_cassiopea/temperature_generator_multi_station"
-
+## wpath <-  "/Users/ecor/Dropbox/iasma/RMAWGENdev/RMAWGEN_article/RMAWGEN_simulations/data" ## wpath <-  "/home/idroclima/github/RMAWGENCodeCorner/output_cassiopea/temperature_generator_multi_station"
+wpath <- paste(getwd(),"data",sep="/") ##  set setwd() function to RMAWGENCodeCorner directory
 ## ADJUST DATASET 
 
 
