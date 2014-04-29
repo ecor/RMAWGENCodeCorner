@@ -3,7 +3,7 @@
 # This file contains a script example with daily precipitation  stochastic generations 
 #
 #
-# author: Emanuele Cordano on 12-01-2012
+# author: Emanuele Cordano on 2014-04-01
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ names(accepted) <- names
 for (it in names) {
 	cond  <- (length(which(!is.na(prec_mesx[,it])))==length(prec_mesx[,it]))
 
-##	accepted[it]  <- (length(which(!is.na(temp_mesx[,it])))==length(temp_mesx[,it])) & cond 
+ 
 	accepted[it] <- cond
 }
 
