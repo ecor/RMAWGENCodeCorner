@@ -28,6 +28,19 @@ library(ggplot2)
 library(reshape2)
 library(RMAWGEN)
 
+NULL
+#'addseason
+#' 
+#' Add seeson field to \code{data}
+#' 
+#' @param data input data frame 
+#' @param origin  character string data
+#' @param nodata logical value 
+#' 
+#' @seealso \code{\link{adddate}}
+#' @export
+#' 
+#' 
 
 
 addseason <- function(data,origin,nodata=TRUE) {
@@ -56,7 +69,7 @@ addseason <- function(data,origin,nodata=TRUE) {
 }
 
 
-
+NULL
 #'
 #' Applies a function to a data frame according to a FACTOR field. 
 #' 

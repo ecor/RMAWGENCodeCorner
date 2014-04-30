@@ -12,7 +12,7 @@ NULL
 #' 
 #' 
 
-#' @refernce \url{http://stackoverflow.com/questions/14519006/significance-test-on-the-difference-of-two-correlation-coefficient}
+#' @reference \url{http://stackoverflow.com/questions/14519006/significance-test-on-the-difference-of-two-correlation-coefficient}
 #cocor - comparing correlations, 1.0-0, http://comparingcorrelations.org
 #
 #INPUT:
